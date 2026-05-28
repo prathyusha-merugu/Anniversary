@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Anniversary</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+      min-height:100vh;
+      overflow:hidden;
+      color:white;
+      position:relative;
+    }
+
+    /* Stars */
+
+    .stars{
+      position:absolute;
+      width:100%;
+      height:100%;
+      z-index:0;
+    }
+
+    .star{
+      position:absolute;
+      animation:twinkle 3s infinite;
+      opacity:0.8;
+      font-size:20px;
+    }
+
+    @keyframes twinkle{
+      0%{opacity:0.2; transform:scale(0.8);}
+      50%{opacity:1; transform:scale(1.2);}
+      100%{opacity:0.2; transform:scale(0.8);}
+    }
+
+    .container{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      padding:30px;
+      position:relative;
+      z-index:2;
+    }
+
+    .card{
+      width:100%;
+      max-width:1000px;
+      background:rgba(255,255,255,0.12);
+      backdrop-filter:blur(12px);
+      border-radius:30px;
+      padding:40px;
+      text-align:center;
+      box-shadow:0 10px 35px rgba(0,0,0,0.3);
+      border:1px solid rgba(255,255,255,0.2);
+    }
+
+    .title{
+      font-family:'Great Vibes',cursive;
+      font-size:75px;
+      margin-bottom:15px;
+      text-shadow:0 0 15px rgba(255,255,255,0.8);
+    }
+
+    .subtitle{
+      font-size:28px;
+      margin-bottom:25px;
+      font-weight:300;
+    }
+
+    .message{
+      font-size:20px;
+      line-height:1.8;
+      max-width:800px;
+      margin:auto;
+      margin-bottom:40px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      margin-top:30px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:300px;
+      object-fit:cover;
+      border-radius:20px;
+      transition:0.4s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .gallery img:hover{
+      transform:scale(1.05);
+    }
+
+    .btn{
+      margin-top:40px;
+      padding:15px 35px;
+      border:none;
+      border-radius:40px;
+      font-size:20px;
+      font-weight:bold;
+      cursor:pointer;
+      background:white;
+      color:#203a43;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+    }
+
+    footer{
+      margin-top:35px;
+      color:#ddd;
+    }
+
+    /* Popup */
+
+    .popup{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%) scale(0);
+      background:white;
+      width:90%;
+      max-width:500px;
+      border-radius:25px;
+      padding:20px;
+      z-index:10;
+      transition:0.4s;
+      box-shadow:0 10px 40px rgba(0,0,0,0.5);
+      text-align:center;
+    }
+
+    .popup.active{
+      transform:translate(-50%,-50%) scale(1);
+    }
+
+    .popup img{
+      width:100%;
+      border-radius:20px;
+      max-height:500px;
+      object-fit:cover;
+    }
+
+    .popup h2{
+      margin-top:15px;
+      color:#203a43;
+      font-family:'Great Vibes',cursive;
+      font-size:45px;
+    }
+
+    .close-btn{
+      margin-top:20px;
+      padding:12px 25px;
+      border:none;
+      border-radius:30px;
+      background:#203a43;
+      color:white;
+      cursor:pointer;
+      font-size:16px;
+    }
+
+    @media(max-width:768px){
+
+      .title{
+        font-size:52px;
+      }
+
+      .subtitle{
+        font-size:22px;
+      }
+
+      .message{
+        font-size:17px;
+      }
+
+      .gallery img{
+        height:240px;
+      }
+
+      .card{
+        padding:25px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Stars -->
+
+  <div class="stars">
+
+    <div class="star" style="top:10%;left:15%;">⭐</div>
+    <div class="star" style="top:20%;left:75%;">✨</div>
+    <div class="star" style="top:40%;left:25%;">⭐</div>
+    <div class="star" style="top:60%;left:80%;">✨</div>
+    <div class="star" style="top:75%;left:10%;">⭐</div>
+    <div class="star" style="top:85%;left:60%;">✨</div>
+    <div class="star" style="top:30%;left:50%;">⭐</div>
+
+  </div>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1 class="title">Happy Anniversary</h1>
+
+      <h2 class="subtitle">Dear Mom & Dad ❤️</h2>
+
+      <p class="message">
+        Your love, care, and togetherness inspire us every day.
+        Wishing you endless happiness and many more beautiful years together.
+      </p>
+
+      <!-- Gallery -->
+
+      <div class="gallery">
+
+        <img src="images/photo1.jpg" alt="Photo 1">
+        <img src="images/photo2.jpg" alt="Photo 2">
+        <img src="images/photo3.jpg" alt="Photo 3">
+
+      </div>
+
+      <!-- Surprise Button -->
+
+      <button class="btn" onclick="showPopup()">
+        Click Here 🎉
+      </button>
+
+      <footer>
+        Made with ❤️ by Your Children
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- Popup -->
+
+  <div class="popup" id="popup">
+
+    <!-- Surprise Photo -->
+    <img src="images/surprise.jpg" alt="Surprise Photo">
+
+    <h2>Happy Anniversary ❤️</h2>
+
+    <button class="close-btn" onclick="closePopup()">
+      Close
+    </button>
+
+  </div>
+
+  <!-- JavaScript -->
+
+  <script>
+
+    function showPopup(){
+      document.getElementById("popup").classList.add("active");
+    }
+
+    function closePopup(){
+      document.getElementById("popup").classList.remove("active");
+    }
+
+  </script>
+
+</body>
+</html>
